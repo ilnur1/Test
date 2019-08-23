@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Dis1.Models.Company>
+
+<div class="work">
+    <div class="work-tittle">
+        <div class="work-tittle title">
+            <p>Компании</p>
+        </div>
+        <div class="work-tittle text">
+            <p>Страница всех компаний в системе</p>
+        </div>
+    </div>
+    <div class="shablon-head">
+        <div class="shablon-head-inline"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company">Мои компании</a></div>
+        <div class="shablon-head-inline" style="margin-left:5px;"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company_All">Все компании</a></div>
+        <div class="shablon-head-inline" style="margin-left:5px;"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company_Req">Заявки</a></div>
+    </div>
+    <div class="shablon-table" id="content1">
+        <table class="table-shablon">
+            <tr><td class="table-1">Компания</td><td class="table-2">ИНН</td><td class="table-3">Добавить</td></tr>
+            @foreach (var item in Model)
+            {
+                <tr><td>@item.CompanyName</td><td>@item.CompanyInn</td><td><form asp-action="Company_Add" asp-controller="home" style="display:inline; padding:3px;"><input type="type" name="id" value="@item.Cc" style="display:none" /><input type="submit" name="id" class="btn-cmp-add" value="" /></form></td></tr>
+            }
+        </table>
+    </div>
+</div>

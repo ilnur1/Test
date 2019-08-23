@@ -1,0 +1,95 @@
+﻿@model Dis1.Models.Company
+@{
+    ViewData["Title"] = "Personal";
+}
+<div class="work">
+    <div class="work-tittle">
+        <div class="work-tittle title">
+            <p>Личный кабинет</p>
+        </div>
+        <div class="work-tittle text">
+            <p>Стрианица для внесения собственных данных</p>
+        </div>
+    </div>
+    <form asp-action="edit" asp-controller="home">
+        <div class="data">
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="CompanyLogin" class="txt" value=@Model.CompanyLogin />
+                </div>
+                <div>
+                    <p class="value">Логин</p>
+                </div>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="CompanyName" class="txt" value=@Model.CompanyName />
+                </div>
+                <div>
+                    <p class="value">Название</p>
+                </div>
+            </div>
+
+            <div class="shablon-text">
+
+                <div class="text">
+                    <input type="password" asp-for="CompanyPas" class="txt" value=@Model.CompanyPas />
+                </div>
+                <div>
+                    <p class="value">Пароль</p>
+                </div>
+
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="CompanyInn" class="txt" value=@Model.CompanyInn name="">
+                </div>
+                <div>
+                    <p class="value">ИНН</p>
+                </div>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="Family" class="txt" value=@Model.Family name="">
+                </div>
+                <div>
+                    <p class="value">Фамилия</p>
+                </div>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="Firstname" class="txt" value=@Model.Firstname name="">
+                </div>
+                <p class="value">Имя</p>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="Lasttname" class="txt" value=@Model.Lasttname name="">
+                </div>
+                <p class="value">Отчество</p>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="CompanyAdress" class="txt" value=@Model.CompanyAdress name="">
+                </div>
+                <p class="value">Адрес</p>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="CompanyPhone" class="txt" value=@Model.CompanyPhone name="">
+                </div>
+                <p class="value">Телефон</p>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="CompanyPhone" class="txt" value=@Model.CompanyDescription name="">
+                </div>
+                <p class="value">Телефон</p>
+            </div>
+            <input type="submit" value="Сохранить" class="btn" />
+        </div>
+    </form>
+</div>
+
+
+

@@ -1,0 +1,43 @@
+﻿<div class="work">
+    <div id="content3">
+        <div class="cmp-dialogue">
+            <div class="cmp-dialogue-tittle">
+                <p class="cmp-dialogue-tittle-top">Отчет готов.</p>
+            </div>
+            <div class="cmp-dialogue-text">
+                <p>
+                    Выберите, что сделать с отчетом, Вы можете отправить его по почте или отправить внутри системы.
+                </p>
+            </div>
+            <div class="cmp-dialogue-btn cmp-dialogue-work">
+                <input type="submit" value="Отправить по почте" class="btn btn-dialogue-work" id="link5" />
+                <form asp-action="edit" asp-controller="home">
+                    <input type="submit" value="Отправить в системе" asp-action="Sendcmp" class="btn btn-dialogue-work btn-send-from"/>
+                </form>
+                <form asp-action="edit" asp-controller="home">
+                    <input type="submit" value="Страница отчетов" class="btn btn-dialogue-work btn-send-from"  asp-action="Reports" />
+                </form>
+            </div>
+        </div>
+    </div>
+    <div id="content5" style="display:none;">
+        <form action="Send_email_cr" method="post">
+            <div class="cmp-dialogue">
+                <div class="cmp-dialogue-tittle">
+                    <p class="cmp-dialogue-tittle-top">Отправка по почте.</p>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="name" id="name" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Введите адрес</p>
+                    </div>
+                </div>
+                <div class="shablon-btn">
+                    <input type="submit" value="Отправить" class="btn-shablon"/>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

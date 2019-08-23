@@ -1,0 +1,482 @@
+﻿@model IEnumerable<Dis1.Models.Shablon>
+<div class="work">
+    <div class="work-tittle" id="work-tittle">
+        <div class="work-tittle title">
+            <p>Создание технического отчета</p>
+        </div>
+        <div class="work-tittle text">
+            <p>После выбора типа строительных работ и шаблонов вы сможете приступить у созданию отчета</p>
+        </div>
+    </div>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="6000" id="content1">
+        <ol class="carousel-indicators">
+            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+            <li data-target="#myCarousel" data-slide-to="1"></li>
+            <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img src="~/pic/el.jpg" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+                    <p>
+                        <input type="submit" value="Приступить к работе" class="btn btn-work" id="link1" />
+                    </p>
+                </div>
+            </div>
+            <div class="item">
+                <img src="~/pic/test.jpg" alt="Microsoft Azure" class="img-responsive" />
+                <div class="carousel-caption" role="option">
+
+                    <p>
+                        <input type="submit" value="Приступить к работе" class="btn btn-work" id="link7" />
+                    </p>
+
+                </div>
+            </div>
+        </div>
+        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Предыдущий</span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Следующий</span>
+        </a>
+    </div>
+
+    <div id="content2" style="display:none;">
+        <div>
+            <p class="shablon-tittle">Заполните данные</p>
+        </div>
+        <div class="work-list">
+            <form method="post" action="~/Home/Work1">
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Наименование отчета</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Наименование объекта строительства</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Номер проекта</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Дата технического отчета</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель компании заказчик</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Должность представителя заказчика</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Компания заказчик</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Реквизиты компании заказчика</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value=@ViewData["buid"] class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель монтажной компании</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value=@ViewData["buid2"] class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Должность представителя монтажной компании</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Реквезиты монтажной компании</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value=@ViewData["buid1"] class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Монтажная компания</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Проектная компания</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Реквезиты компании проектанта</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель проектной компании</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Должность представителя проектной компании</p>
+                    </div>
+                </div>
+    
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Должность представителя компании строительного контроля</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель компании по строительному контролю</p>
+                    </div>
+                </div>
+            
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Выполненные электромонтажные работы</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Электроустановка</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Испытания</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель генерального подрядчика</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Должность представителя ген подрядчика</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Генеральный подрядчик</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Номер серытых работ</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Дата скрытых работ</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Скрытые работы</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Материал для скрытых работ</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Дата начала скрытых работ</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Дата окончания скрытых работ</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Дата чертежа</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Место установки изолятора</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Тип изолятора</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Количество изоляторов</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Используемый провод</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Общее количество провода</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Количесво промежуточных опор</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Количество анкерных опор</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Количество углововых опор</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Количество опор другого типа</p>
+                    </div>
+                </div>
+                <div class="shablon-btn">
+                    <input type="submit" value="Отправить" class="btn-shablon" id="link3" />
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="content7" style="display:none;">
+        <div>
+            <p class="shablon-tittle">Заполните данные</p>
+        </div>
+        <div class="work-list">
+            <form method="post" action="~/Home/Work2">
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Наименование отчета</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Наименование объекта строительства</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Номер проекта</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Дата технического отчета</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Компания заказчик</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Должность представителя заказчика</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Монтажная Компания</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель монтажной компании</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Представитель ген. подрядочной компании</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Электромонтажные работы</p>
+                    </div>
+                </div>
+                <div class="shablon-text">
+                    <div>
+                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                    </div>
+                    <div>
+                        <p class="value">Номер проекта</p>
+                    </div>
+                </div>
+                <div class="shablon-btn">
+                    <input type="submit" value="Отправить" class="btn-shablon" id="link3" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+</div>

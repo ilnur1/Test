@@ -1,0 +1,25 @@
+﻿@model IEnumerable<Dis1.Models.Company>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="work">
+    @foreach (var item in Model)
+    {
+        <div class="cmp-dialogue">
+            <div class="cmp-dialogue-tittle">
+                <p class="cmp-dialogue-tittle-top">Компания</p>
+                <p class="cmp-dialogue-tittle-down">@item.CompanyName</p>
+                <p class="cmp-dialogue-tittle-down">@item.CompanyInn</p>
+                <p class="cmp-dialogue-tittle-down">@item.CompanyPhone</p>
+            </div>
+            <div class="cmp-dialogue-text">
+                <p>
+                    @item.CompanyDescription
+                </p>
+            </div>
+            <div class="cmp-dialogue-btn">
+                <button asp-area="" asp-controller="Home" asp-action="Company" class="btn">Назад</button>
+            </div>
+        </div>
+    }
+</div>

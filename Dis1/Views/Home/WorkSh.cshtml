@@ -1,0 +1,75 @@
+﻿@model IEnumerable<Dis1.Models.Shablon>
+<div class="work">
+    <div class="work-tittle" id="work-tittle">
+        <div class="work-tittle title">
+            <p>Создание технического отчета</p>
+        </div>
+        <div class="work-tittle text">
+            <p>После выбора типа строительных работ и шаблонов вы сможете приступить у созданию отчета</p>
+        </div>
+    </div>
+    <div id="content1" class="shablon">
+        <div>
+            <div>
+                <p class="shablon-tittle">Выберите шаблоны</p>
+            </div>
+            <form method="post" asp-action="Work" asp-controller="home">
+                <div class="shablon-choose">
+                    <div class="shablon-text">
+                        <select class="shablon-txt" name="build">
+                            @foreach (var item in Model)
+                            {
+                                <option value=@item.Cs name="build" id="build">@item.ShablonName</option>
+                            }
+                        </select>
+                        <br>
+                        <select class="shablon-txt">
+                            <option value="value">Монтажная компания</option>
+                        </select>
+                    </div>
+                    <!--
+        <div class="shablon-text">
+            <select class="shablon-txt" name="project" >
+                 @foreach (var item in Model)
+                 {
+                     <option value=@item.Cs name="project" id="project">@item.ShablonName</option>
+                 }
+             </select>
+            <br>
+            <select class="shablon-txt">
+                <option value="value">Проектант</option>
+            </select>
+        </div>
+    <div class="shablon-text">
+            <select class="shablon-txt" name="customer">
+                 @foreach (var item in Model)
+                 {
+                     <option value=@item.Cs name="customer" id="customer">@item.ShablonName</option>
+                 }
+             </select>
+            <br>
+            <select class="shablon-txt">
+                <option value="value">Заказчик</option>
+            </select>
+        </div>
+    <div class="shablon-text">
+            <select class="shablon-txt" name="genbuild">
+                 @foreach (var item in Model)
+                 {
+                     <option value=@item.Cs name="genbuild" id="genbuild">@item.ShablonName</option>
+                 }
+             </select>
+            <br>
+            <select class="shablon-txt">
+                <option value="value">Генеральный подрядчик</option>
+            </select>
+        </div>
+    </div>
+        -->
+                    <div class="shablon-btn">
+                        <input type="submit" value="Дальше" class="btn-shablon" />
+                    </div>
+</form>
+        </div>
+    </div>
+</div>

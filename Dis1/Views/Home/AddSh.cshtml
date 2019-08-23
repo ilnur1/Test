@@ -1,0 +1,56 @@
+﻿@model Dis1.Models.Shablon
+@{
+
+}
+<div class="work">
+    <div class="work-tittle">
+        <div class="work-tittle title">
+            <p>Страница шаблонов</p>
+        </div>
+        <div class="work-tittle text">
+            <p>Стрианица для создания и просмотра шаблонов</p>
+        </div>
+    </div>
+    <div class="shablon-head">
+        <div class="shablon-head-inline"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Template">Просмотреть</a></div>
+        <div class="shablon-head-inline" style="margin-left:5px;"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="AddSh">Добавить</a></div>
+    </div>
+    <div class="data" id="content2">
+        <form asp-action="input_shablon" asp-controller="home">
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="ShablonName" class="txt" />
+                </div>
+                <div>
+                    <p class="value">Компания представителя</p>
+                </div>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="ShablonPosition" class="txt" />
+                </div>
+                <div>
+                    <p class="value">Должность</p>
+                </div>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="ShablonOrder" class="txt" />
+                </div>
+                <div>
+                    <p class="value">Приказ</p>
+                </div>
+            </div>
+            <div class="shablon-text">
+                <div class="text">
+                    <input type="text" asp-for="ShablonAgent" class="txt" />
+                </div>
+                <div>
+                    <p class="value">Имя представителя</p>
+                </div>
+            </div>
+            <input type="submit" value="Добавить" class="btn" />
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,24 @@
+﻿@model IEnumerable<Dis1.Models.Report>
+@{
+    ViewBag.Title = "Все смартфоны";
+}
+<div class="work">
+    <div class="work-tittle">
+        <div class="work-tittle title">
+            <p>Страница отчетов</p>
+        </div>
+        <div class="work-tittle text">
+            <p>Стрианица для просмотра отчетов</p>
+        </div>
+    </div>
+    <div class="shablon-table">
+        <table class="table-shablon">
+            <tr><td class="table-1">Наименование</td><td class="table-2">Дата</td><td class="table-3"></td></tr>
+            @foreach (var item in Model)
+            {
+            <tr><td>@item.ReportName</td><td>@item.ReportDate</td><td style="display: inline-flex;"><form asp-action="Delete1" asp-controller="home" style="display:inline;padding:3px;"><input type="type" name="id" value="@item.Cr" style="display:none" /><input type="submit" name="id" class="btn-temp-del" value="" /></form><form asp-action="Send_email" asp-controller="home" style="display:inline;padding:3px;"><input type="type" name="id" value="@item.Cr" style="display:none" /><input type="submit" name="id" class="btn-temp-email" value="" /></form><form asp-action="Sendcmp" asp-controller="home" style="display:inline;padding:3px;"><input type="type" name="id1" value="@item.Cr" style="display:none" /><input type="submit" name="id" class="btn-temp-send" value="" /></form></td></tr>
+            }
+        </table>
+    </div>
+
+</div>

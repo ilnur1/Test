@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Faradey</title>
+    <environment include="Development">
+    </environment>
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+</head>
+<body>
+    <div class="menu">
+        <div class="menu-top">
+            <div class="ico">
+                <a asp-area="" asp-controller="Home" asp-action="Personal">
+                    <img src="~/pic/user.png">
+                </a>
+                <a asp-area="" asp-controller="Home" asp-action="Personal" class="personal">@ViewBag.Tittle</a>
+                <p class="personal cab">@ViewData["reports"]</p>
+                <a asp-area="" asp-controller="Home" asp-action="Personal" class="personal cab">Личный кабинет</a>
+            </div>
+        </div>
+        <div class="menu-medium">
+            <nav>
+                <ul class="menuVertical">
+                    <li><a asp-area="" asp-controller="Home" asp-action="WorkSh"><img src="~/pic/add.png"><span>Создать отчет</span></a></li>
+
+                    <li><a asp-area="" asp-controller="Home" asp-action="Reports"><img src="~/pic/folder.png"><span>Отчеты</span></a></li>
+
+                    <li><a asp-area="" asp-controller="Home" asp-action="Template"><img src="~/pic/copy.png"><span>Шаблоны</span></a></li>
+
+                    <li><a asp-area="" asp-controller="Home" asp-action="Company"><img src="~/pic/group.png"><span>Компании</span></a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="footer">
+            <a href="#1"><img src="~/pic/logout2.png"><span>Выйти</span></a>
+        </div>
+        <div class="menu-medium-enter" style="display:none">
+            <nav>
+                <ul class="menuVertical">
+                    <li><a href="#1"><img src="pic/logout.png"><span>Войти</span></a></li>
+
+                    <li><a href="#2"><img src="pic/registration.png"><span>Зарегистрироваться</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div>
+        @RenderBody()
+    </div>
+    <environment include="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    </environment>
+    <script>
+        $(document).ready(function () {
+            $('#link1').click(function (e) {
+                $('#myCarousel').hide();
+                $('#work-tittle').hide();
+                $('#content1').toggle();
+                e.stopPropagation();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#link1').click(function (e) {
+                $('#content1').hide();
+                $('#content2').toggle();
+                e.stopPropagation();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#link7').click(function (e) {
+                $('#myCarousel').hide();
+                $('#work-tittle').hide();
+                $('#content7').toggle();
+                e.stopPropagation();
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $('#link4').click(function (e) {
+                $('#content3').hide();
+                $('#content4').toggle();
+                e.stopPropagation();
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            $('#link5').click(function (e) {
+                $('#content3').hide();
+                $('#content5').toggle();
+                e.stopPropagation();
+            });
+        });
+    </script>
+</body>
+</html>

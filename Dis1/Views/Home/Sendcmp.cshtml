@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Dis1.Models.Company>
+@{
+    ViewBag.Title = "Все смартфоны";
+}
+<div class="work">
+    <form action="/" method="post">
+        <div class="cmp-dialogue">
+            <div class="cmp-dialogue-tittle">
+                <p class="cmp-dialogue-tittle-top">Отправка внутри системы.</p>
+            </div>
+            <div class="shablon-text">
+                <div>
+                    <select name="id" class="shablon-txt">
+                        @foreach (var item in Model)
+                        {
+                            <option value=@item.Cc name="name" id="name">@item.CompanyLogin</option>
+                        }
+                    </select>
+                </div>
+                <div>
+                    <p class="value">Выберете компанию</p>
+                </div>
+            </div>
+            <div class="shablon-btn">
+                <input type="submit" value="Отправить" class="btn-shablon" asp-action="Send_cmp" />
+            </div>
+        </div>
+    </form>
+</div>

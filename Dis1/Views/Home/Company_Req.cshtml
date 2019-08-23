@@ -1,0 +1,46 @@
+﻿@model IEnumerable<Dis1.Models.Company>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+<div class="work">
+    <div class="work-tittle">
+        <div class="work-tittle title">
+            <p>Мои заявки</p>
+        </div>
+        <div class="work-tittle text">
+            <p>Страница компаний, которые подали заявки, что бы сотрудничать с вами</p>
+        </div>
+    </div>
+    <div class="shablon-head">
+        <div class="shablon-head-inline"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company">Мои компании</a></div>
+        <div class="shablon-head-inline" style="margin-left:5px;"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company_All">Все компании</a></div>
+        <div class="shablon-head-inline" style="margin-left:5px;"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company_Req">Заявки</a></div>
+    </div>
+    <div class="cmp">
+        @foreach (var item in Model)
+        {
+            <ul class="cmp-list">
+                <li class="cmp-list-li">
+                    <div class="cmp-list-li-div">
+                        <ul>
+                            <div class="cmp-list-li-info">
+                                <li><h2>@item.CompanyLogin</h2></li>
+                                <li><p>@item.CompanyName</p></li>
+                                <li><p>@item.Family</p></li>
+                                <li><p>@item.Firstname</p></li>
+                                <li><p>@item.Lasttname</p></li>
+                                <form asp-action="Company_Add_Friend" asp-controller="home">
+                                    <li><input type="hidden" class="txt" value=@item.Cc name="id" /></li>
+                                    <li><input type="submit" value="Добавить" class="btn-company"  asp-action="Company_Add_Friend" /></li>
+                                </form>
+                            </div>
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        }
+    </div>
+</div>
