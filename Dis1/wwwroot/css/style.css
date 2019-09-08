@@ -621,6 +621,13 @@ td:last-child {
     height: 24px;
     width: 24px;
 }
+.btn-temp-temp {
+    background: url(../pic/temp.png);
+    border: 0;
+    display: inline;
+    height: 24px;
+    width: 24px;
+}
 .btn-temp-send {
     background: url(../pic/send.png);
     border: 0;

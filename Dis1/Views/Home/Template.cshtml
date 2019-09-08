@@ -22,7 +22,7 @@
             <tr><td class="table-1">Компания</td><td class="table-2">Представитель</td><td class="table-3">Удалить</td></tr>
             @foreach (var item in Model)
             {
-                <tr><td>@item.ShablonName</td><td>@item.ShablonAgent</td><td><form asp-action="Delete" asp-controller="home" style="display:inline; padding:3px;"><input type="type" name="id" value="@item.Cs" style="display:none" /><input type="submit" name="id" class="btn-temp-del" value=""/></form></td></tr>
+                <tr><td>@item.ShablonName</td><td>@item.ShablonAgent</td><td><form asp-action="Delete" asp-controller="home" style="display:inline; padding:3px;"><input type="type" name="id" value="@item.Cs" style="display:none" /><input type="submit" name="id" class="btn-temp-del" value=""/></form><form asp-action="TemplateLook" asp-controller="home" style="display:inline; padding:3px;"><input type="type" name="id" value="@item.Cs" style="display:none" /><input type="submit" name="id" class="btn-temp-temp" value="" /></form></td></tr>
             }
         </table>
     </div>

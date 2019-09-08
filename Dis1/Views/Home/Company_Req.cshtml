@@ -4,6 +4,16 @@
 }
 <head>
     <link rel="stylesheet" href="~/css/style.css" />
+    <script type="text/javascript">
+        @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+        {
+            <text>
+            $(document).ready(function() {
+                alert('@ViewData.ModelState["Error"].Errors.First().ErrorMessage');
+            });
+            </text>
+        }
+    </script>
 </head>
 <div class="work">
     <div class="work-tittle">
@@ -14,6 +24,12 @@
             <p>Страница компаний, которые подали заявки, что бы сотрудничать с вами</p>
         </div>
     </div>
+    @if (!ViewData.ModelState.IsValid && ViewData.ModelState["Error"].Errors.Count > 0)
+    {
+        <div class="alert alert->
+            <strong>Error!</strong> danger">@ViewData.ModelState["Error"].Errors.First().ErrorMessage
+        </div>
+    }
     <div class="shablon-head">
         <div class="shablon-head-inline"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company">Мои компании</a></div>
         <div class="shablon-head-inline" style="margin-left:5px;"><a class="shablon-link" asp-area="" asp-controller="Home" asp-action="Company_All">Все компании</a></div>
@@ -34,7 +50,7 @@
                                 <li><p>@item.Lasttname</p></li>
                                 <form asp-action="Company_Add_Friend" asp-controller="home">
                                     <li><input type="hidden" class="txt" value=@item.Cc name="id" /></li>
-                                    <li><input type="submit" value="Добавить" class="btn-company"  asp-action="Company_Add_Friend" /></li>
+                                    <li><input type="submit" value="Добавить" class="btn-company" asp-action="Company_Add_Friend" /></li>
                                 </form>
                             </div>
                         </ul>
@@ -43,4 +59,5 @@
             </ul>
         }
     </div>
+
 </div>
