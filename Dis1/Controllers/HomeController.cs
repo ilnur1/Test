@@ -11,6 +11,7 @@ using TemplateEngine.Docx;
 using System.Net.Mail;
 using System.Net.Mime;
 using System.Net;
+using System.IO;
 
 namespace Dis1.Controllers
 {
@@ -33,7 +34,7 @@ namespace Dis1.Controllers
         }
 
         [Authorize]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {/*
             decimal id = 0;
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
@@ -235,6 +236,13 @@ namespace Dis1.Controllers
             return View(CompanyTL.ToList());
 
         }
+        public async Task<IActionResult> TemplateLook(decimal id)
+        {
+           
+            var TemplateTL = db.Shablon.Where(c => c.Cc == id).Select(c => c);// переделал на контекст
+            return View(TemplateTL.ToList());
+
+        }
         [HttpPost]
         public async Task<IActionResult> Input_shablon(Shablon cmp)
         {
@@ -243,6 +251,8 @@ namespace Dis1.Controllers
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
             if (myphone != null)
                 id = myphone.Cc;*/
+
+            // добавить, добавление шаблона после изменения бд
             db.Shablon.Add(new Shablon { ShablonName = cmp.ShablonName, ShablonPosition = cmp.ShablonPosition, Cc = Getid(), ShablonAgent = cmp.ShablonAgent, ShablonOrder = cmp.ShablonOrder, });// сделал типо вызов метода что бы получать id
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -293,20 +303,20 @@ namespace Dis1.Controllers
             // кому отправляем
             MailAddress to = new MailAddress("zamain88@yandex.ru");
             // создаем объект сообщения
-            MailMessage m = new MailMessage(from, to);
+            MailMessage mail = new MailMessage(from, to);
             // тема письма
-            m.Subject = "Тест";
+            mail.Subject = "Тест";
             // текст письма
-            m.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
+            mail.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
             // письмо представляет код html
-            m.Attachments.Add(new Attachment(RepWay.FirstOrDefault()));
-            m.IsBodyHtml = true;
+            mail.Attachments.Add(new Attachment(RepWay.FirstOrDefault()));
+            mail.IsBodyHtml = true;
             // адрес smtp-сервера и порт, с которого будем отправлять письмо
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
             // логин и пароль
             smtp.Credentials = new NetworkCredential("19capral95@gmail.com", "");
             smtp.EnableSsl = true;
-            smtp.Send(m);
+            smtp.Send(mail);
 
             return RedirectToAction("Index");
 
@@ -329,20 +339,20 @@ namespace Dis1.Controllers
             // кому отправляем
             MailAddress to = new MailAddress(name);
             // создаем объект сообщения
-            MailMessage m = new MailMessage(from, to);
+            MailMessage mail = new MailMessage(from, to);
             // тема письма
-            m.Subject = "Тест";
+            mail.Subject = "Тест";
             // текст письма
-            m.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
+            mail.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
             // письмо представляет код html
-            m.Attachments.Add(new Attachment(Reportwaycmp));
-            m.IsBodyHtml = true;
+            mail.Attachments.Add(new Attachment(Reportwaycmp));
+            mail.IsBodyHtml = true;
             // адрес smtp-сервера и порт, с которого будем отправлять письмо
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
             // логин и пароль
             smtp.Credentials = new NetworkCredential("19capral95@gmail.com", "19casper95");
             smtp.EnableSsl = true;
-            smtp.Send(m);
+            smtp.Send(mail);
 
             return RedirectToAction("Index");
 
@@ -412,9 +422,10 @@ namespace Dis1.Controllers
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
             if (myphone != null)
                 id = myphone.Cc;*/
+                /*
             var query = from Shablon in db.Shablon
                         where Shablon.Cc == Getid()// сделал типо вызов метода что бы получать id
-                        select Shablon;
+                        select Shablon;*/
             var ShablonTL = db.Shablon.Where(c => c.Cc == Getid()).Select(c => c);
             return View(ShablonTL.ToList());
         }
@@ -442,7 +453,6 @@ namespace Dis1.Controllers
         }
         public IActionResult AddSh()
         {
-
             return View();
         }
         [Authorize]
@@ -454,16 +464,19 @@ namespace Dis1.Controllers
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
             if (myphone != null)
             id = myphone.Cc;*/
+            /*
             var query = from Friends in db.Friends
                         from Company in db.Company
                         where Friends.FriendOne == Company.Cc && Friends.FriendTwo == Getid() && Friends.Stat == 1// сделал типо вызов метода что бы получать id
                         select Company;
-            var CompanyTL = db.Report.Where(c => c.Cc == Getid()).Select(c => c.ReportName);
-            return View(query.ToList());
+                        */
+            var CompanyTL = from p in db.Friends join c in db.Company on p.FriendOne equals c.Cc where p.FriendTwo == Getid() && p.Stat == 1 select c;
+            return View(CompanyTL.ToList());
 
         }
         public IActionResult Company_All()
         {
+            
             return View(db.Company.ToList());
         }
         public IActionResult Company_Req()
@@ -486,14 +499,27 @@ namespace Dis1.Controllers
         [HttpPost]
         public async Task<IActionResult> Company_Add(decimal id)
         {
+            
             /*
             decimal id1 = 0;
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
             if (myphone != null)
                 id1 = myphone.Cc;*/
-            db.Friends.Add(new Friends { FriendOne = Getid(), FriendTwo = id, Stat = 0 });// сделал типо вызов метода что бы получать id
-            await db.SaveChangesAsync();
-            return RedirectToAction("Company_Req");
+            
+            var friend1 = db.Friends.Where(c => c.FriendOne == Getid()).Where(c => c.FriendTwo == id).Where(c=>c.Stat==1).FirstOrDefault();
+            var friend2 = db.Friends.Where(c => c.FriendOne == Getid()).Where(c => c.FriendTwo == id).Where(c => c.Stat == 0).FirstOrDefault();
+            if (friend1 == null && friend2 == null)
+            {
+                db.Friends.Add(new Friends { FriendOne = Getid(), FriendTwo = id, Stat = 0 });// сделал типо вызов метода что бы получать id
+                await db.SaveChangesAsync();
+                return RedirectToAction("Company_Req");
+            }
+            else
+            {
+                
+                return RedirectToAction("Company_All");
+            }
+            
         }
 
         [HttpPost]
@@ -504,7 +530,9 @@ namespace Dis1.Controllers
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
             if (myphone != null)
                 id1 = myphone.Cc;*/
-            db.Friends.Update(new Friends { FriendOne = Getid(), FriendTwo = id, Stat = 1 });// сделал типо вызов метода что бы получать id
+            var friend = db.Friends.Where(c => c.FriendOne == Getid()).Where(c => c.FriendTwo == id).FirstOrDefault();
+            friend.Stat = 1;
+           // db.Friends.Update(new Friends { FriendOne = Getid(), FriendTwo = id, Stat = 1 });// сделал типо вызов метода что бы получать id
             db.Friends.Update(new Friends { FriendOne = id, FriendTwo = Getid(), Stat = 1 });// сделал типо вызов метода что бы получать id
             await db.SaveChangesAsync();
             return RedirectToAction("Company_All");
@@ -514,6 +542,13 @@ namespace Dis1.Controllers
         {
 
             return View();
+        }
+        // метода для скачивания файлов
+        public VirtualFileResult GetVirtualFile()
+        {
+            //не получается вставить путь из папки
+            var filepath = Path.Combine("~/reports", "gh.docx");
+            return File(filepath, "text/plain", "gh.docx");
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

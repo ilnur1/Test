@@ -1,0 +1,21 @@
+﻿@model IEnumerable<Dis1.Models.Shablon>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="work">
+    @foreach (var item in Model)
+    {
+        <div class="cmp-dialogue">
+            <div class="cmp-dialogue-tittle">
+                <p class="cmp-dialogue-tittle-top">Шаблон</p>
+                <p class="cmp-dialogue-tittle-down">@item.ShablonAgent</p>
+                <p class="cmp-dialogue-tittle-down">@item.ShablonName</p>
+                <p class="cmp-dialogue-tittle-down">@item.ShablonOrder</p>
+                <p class="cmp-dialogue-tittle-down">@item.ShablonPosition</p>
+            </div>
+            <div class="cmp-dialogue-btn">
+                <button asp-area="" asp-controller="Home" asp-action="Template" class="btn">Назад</button>
+            </div>
+        </div>
+    }
+</div>
