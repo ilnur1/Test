@@ -544,11 +544,15 @@ namespace Dis1.Controllers
             return View();
         }
         // метода для скачивания файлов
-        public VirtualFileResult GetVirtualFile()
+        public VirtualFileResult GetVirtualFile(decimal id1)
         {
+            var reportname = db.Report.Where(c => c.Cr== id1).Select(c => c.ReportName).FirstOrDefault();
+            var reportway = db.Report.Where(c => c.Cr == id1).Select(c => c.ReportWay).FirstOrDefault();
+            string RN = reportname.TrimEnd(new char[] {' '}) + ".docx";
+            string RW = reportway;
             //не получается вставить путь из папки
-            var filepath = Path.Combine("~/reports", "gh.docx");
-            return File(filepath, "text/plain", "gh.docx");
+            var filepath = Path.Combine("~/reports", RN);
+            return File(filepath, "text/plain", RN);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

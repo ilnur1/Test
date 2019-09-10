@@ -79,7 +79,7 @@ using Dis1.Models;
                 ");
             EndContext();
             BeginContext(878, 49, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "de7e430eaed245d0a3219011f94dfa3f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "faeb915c897240babf6d473e41388b94", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -106,7 +106,7 @@ using Dis1.Models;
                 ");
             EndContext();
             BeginContext(1243, 73, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3cdcec7696e74904ba9aa25d324f48c8", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "87d81ee4910a47d6b4bc32099cd47de5", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -151,7 +151,7 @@ using Dis1.Models;
             ");
             EndContext();
             BeginContext(2298, 14219, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d0855e2e281d4dda98fb82c31db39ed3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7ce1f1206c83435a92d65360b576a883", async() => {
                 BeginContext(2340, 2914, true);
                 WriteLiteral(@"
                 <div class=""shablon-text"">
@@ -545,7 +545,7 @@ WriteAttributeValue("", 6360, ViewData["buid1"], 6360, 18, false);
             WriteLiteral("\r\n        </div>\r\n    </div>\r\n    <div id=\"content7\" style=\"display:none;\">\r\n        <div>\r\n            <p class=\"shablon-tittle\">Заполните данные</p>\r\n        </div>\r\n        <div class=\"work-list\">\r\n            ");
             EndContext();
             BeginContext(16730, 4031, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af186966b0bd47398ae2a4c33ed802a2", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76ea089fa142448eb60c744baa1651e3", async() => {
                 BeginContext(16772, 3982, true);
                 WriteLiteral(@"
                 <div class=""shablon-text"">
