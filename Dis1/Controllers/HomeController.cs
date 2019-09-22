@@ -321,6 +321,45 @@ namespace Dis1.Controllers
             return RedirectToAction("Index");
 
         }
+
+        /// <summary>
+        /// Отправка письма
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="mailAddres">адрес получателя</param>
+        /// <returns></returns>
+        public async Task<IActionResult> Send_email(decimal id, string mailAddres, string headMessange, string bodyMessange)
+        {
+            var RepWay = db.Report.Where(c => c.Cr == id).Select(c => c.ReportWay);// переделал на контекст
+
+            MailAddress from = new MailAddress("19capral95@gmail.com", "Faradey");
+            // кому отправляем
+            MailAddress to = new MailAddress(mailAddres);
+            // создаем объект сообщения
+            MailMessage mail = new MailMessage(from, to);
+
+            FillinMail(mail, headMessange, bodyMessange);
+
+            // письмо представляет код html
+            mail.Attachments.Add(new Attachment(RepWay.FirstOrDefault()));
+            mail.IsBodyHtml = true;
+            // адрес smtp-сервера и порт, с которого будем отправлять письмо
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            // логин и пароль
+            smtp.Credentials = new NetworkCredential("19capral95@gmail.com", "");
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
+
+            return RedirectToAction("Index");
+        }
+
+        private void FillinMail(MailMessage mail, string headMessange, string bodyMessange)
+        {
+            mail.Subject = headMessange;
+            // текст письма
+            mail.Body = $"<h2>{bodyMessange}</h2>";
+        }
+
         public async Task<IActionResult> Send_email_cr(string name)
         {
             /*
@@ -356,6 +395,30 @@ namespace Dis1.Controllers
 
             return RedirectToAction("Index");
 
+        }
+
+        public async Task<IActionResult> Send_email_cr(string mailAddres, string headMessange, string bodyMessange)
+        {
+            var RepWay = db.Report.Where(c => c.Cc == Getid()).Select(c => c.ReportWay);// переделал на контекст
+            Reportwaycmp = RepWay.LastOrDefault();
+            MailAddress from = new MailAddress("19capral95@gmail.com", "Faradey");
+            // кому отправляем
+            MailAddress to = new MailAddress(mailAddres);
+            // создаем объект сообщения
+            MailMessage mail = new MailMessage(from, to);
+
+            FillinMail(mail, headMessange, bodyMessange);
+
+            mail.Attachments.Add(new Attachment(Reportwaycmp));
+            mail.IsBodyHtml = true;
+            // адрес smtp-сервера и порт, с которого будем отправлять пис+ьмо
+            SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
+            // логин и пароль
+            smtp.Credentials = new NetworkCredential("19capral95@gmail.com", "19casper95");
+            smtp.EnableSsl = true;
+            smtp.Send(mail);
+
+            return RedirectToAction("Index");
         }
 
         public async Task<IActionResult> Sendcmp(decimal id1)
@@ -434,21 +497,16 @@ namespace Dis1.Controllers
         {
             //переименуй элемени=ты на норм названия (А) мне кажется мы тут все переделаем, так что, отложим
             decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;
-            var query = from Shablon in db.Shablon where Shablon.Cc == id && Shablon.Cs == build select Shablon.ShablonAgent;
-            var query1 = from Shablon in db.Shablon where Shablon.Cc == id && Shablon.Cs == build select Shablon.ShablonName;
-            var query2 = from Shablon in db.Shablon where Shablon.Cc == id && Shablon.Cs == build select Shablon.ShablonOrder;
-            var query3 = from Shablon in db.Shablon where Shablon.Cc == id && Shablon.Cs == build select Shablon.ShablonPosition;
-            string q = query.FirstOrDefault();
-            string q1 = query1.FirstOrDefault();
-            string q2 = query2.FirstOrDefault();
-            string q3 = query3.FirstOrDefault();
-            ViewData["buid"] = q;
-            ViewData["buid1"] = q1;
-            ViewData["buid2"] = q2;
-            ViewData["buid3"] = q3;
+            Company company = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
+            if (company == null)
+                return View();
+
+            var value = db.Shablon.Where(x => x.Cc == company.Cc).ToList();
+
+            ViewData["buid"] = value.FirstOrDefault().ShablonAgent;
+            ViewData["buid1"] = value.FirstOrDefault().ShablonName;
+            ViewData["buid2"] = value.FirstOrDefault().ShablonOrder;
+            ViewData["buid3"] = value.FirstOrDefault().ShablonPosition;
             return View();
         }
         public IActionResult AddSh()
