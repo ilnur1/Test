@@ -17,14 +17,14 @@ namespace Dis1.Controllers
 {
     public class HomeController : Controller
     {
-        string Reportwaycmp = "";
+        string reportwaycmp = "";
         private Fara1Context db;
         public HomeController(Fara1Context context)
         {
             db = context;
         }
 
-        public decimal Getid()
+        public decimal Getuserid()
         {
             decimal id = 0;
             Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
@@ -35,18 +35,8 @@ namespace Dis1.Controllers
 
         [Authorize]
         public async Task<IActionResult> Index()
-        {/*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;
-                */
-         /*
-     var query = from Report in db.Report
-                 where Report.Cc == Getid()// сделал типо вызов метода что бы получать id
-                 where Report.ReportStatus == "1"
-                 select Report.Cr; */
-            var idreport = db.Report.Where(c => c.Cc == Getid()).Where(c => c.ReportStatus == "1").Select(c => c.Cr);// переделал на контекст
+        {
+            var idreport = db.Report.Where(c => c.Cc == Getuserid()).Where(c => c.ReportStatus == "1").Select(c => c.Cr);// переделал на контекст
             int count = 0;
             foreach (var item in idreport)
             {
@@ -166,12 +156,8 @@ namespace Dis1.Controllers
                 outputDocument.SaveChanges();
 
             }
-            /*
-            decimal id1 = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id1 = myphone.Cc;*/
-            db.Report.Add(new Report { ReportCustomer = names[3], ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx", Cc = Getid(), ReportName = names[0] });// сделал типо вызов метода что бы получать id
+           
+            db.Report.Add(new Report { ReportCustomer = names[3], ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx", Cc = Getuserid(), ReportName = names[0] });// сделал типо вызов метода что бы получать id
             await db.SaveChangesAsync();
             string Reportwaycmp = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx";
             return RedirectToAction("SendRep");
@@ -180,31 +166,18 @@ namespace Dis1.Controllers
 
         public async Task<IActionResult> Template()
         {
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-            /*
-        var query = from Shablon in db.Shablon
-                    where Shablon.Cc == Getid()// сделал типо вызов метода что бы получать id
-                    select Shablon;
-                    */
-            var ShablonTL = db.Shablon.Where(c => c.Cc == Getid()).Select(c => c);// переделал на контекст
+           
+            var ShablonTL = db.Shablon.Where(c => c.Cc == Getuserid()).Select(c => c);// переделал на контекст
 
             return View(ShablonTL.ToList());
         }
         [Authorize]
         public async Task<IActionResult> Personal()
         {
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-            if (Getid() != null)
+            
+            if (Getuserid() != null)
             {
-                Company cmp = await db.Company.FirstOrDefaultAsync(p => p.Cc == Getid());// сделал типо вызов метода что бы получать id
+                Company cmp = await db.Company.FirstOrDefaultAsync(p => p.Cc == Getuserid());// сделал типо вызов метода что бы получать id
                 if (cmp != null)
                     return View(cmp);
             }
@@ -212,48 +185,33 @@ namespace Dis1.Controllers
         }
 
         public async Task<IActionResult> Reports()
-        {/*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-            var query = from Report in db.Report
-                        where Report.Cc == Getid()// сделал типо вызов метода что бы получать id
-                        select Report;
-            var ReportVL = db.Report.Where(c => c.Cc == Getid()).Select(c => c);// переделал на контекст
+        {
 
-            return View(ReportVL.ToList());
+            var userreport = db.Report.Where(c => c.Cc == Getuserid()).Select(c => c);// переделал на контекст
+
+            return View(userreport.ToList());
         }
         public async Task<IActionResult> CompanyCard(decimal id)
         {
-            /*
-            var query = from Company in db.Company
-                        where Company.Cc == id
-                        select Company;
-                        */
+            
 
-            var CompanyTL = db.Company.Where(c => c.Cc == Getid()).Select(c => c);// переделал на контекст
-            return View(CompanyTL.ToList());
+            var companycard = db.Company.Where(c => c.Cc == Getuserid()).Select(c => c);// переделал на контекст
+            return View(companycard.ToList());
 
         }
         public async Task<IActionResult> TemplateLook(decimal id)
         {
            
-            var TemplateTL = db.Shablon.Where(c => c.Cc == id).Select(c => c);// переделал на контекст
-            return View(TemplateTL.ToList());
+            var usertemplate = db.Shablon.Where(c => c.Cc == id).Select(c => c);// переделал на контекст
+            return View(usertemplate.ToList());
 
         }
         [HttpPost]
         public async Task<IActionResult> Input_shablon(Shablon cmp)
         {
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-
+       
             // добавить, добавление шаблона после изменения бд
-            db.Shablon.Add(new Shablon { ShablonName = cmp.ShablonName, ShablonPosition = cmp.ShablonPosition, Cc = Getid(), ShablonAgent = cmp.ShablonAgent, ShablonOrder = cmp.ShablonOrder, });// сделал типо вызов метода что бы получать id
+            db.Shablon.Add(new Shablon { ShablonName = cmp.ShablonName, ShablonPosition = cmp.ShablonPosition, Cc = Getuserid(), ShablonAgent = cmp.ShablonAgent, ShablonOrder = cmp.ShablonOrder, });// сделал типо вызов метода что бы получать id
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -277,26 +235,22 @@ namespace Dis1.Controllers
         public async Task<IActionResult> Delete(decimal id)
         {
 
-            Shablon Cod = db.Shablon.FirstOrDefault(p => p.Cs == id);
-            db.Shablon.Remove(Cod);
+            Shablon deleteshablonid = db.Shablon.FirstOrDefault(p => p.Cs == id);
+            db.Shablon.Remove(deleteshablonid);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Delete1(decimal id)
         {
 
-            Report Cod1 = db.Report.FirstOrDefault(p => p.Cr == id);
-            db.Report.Remove(Cod1);
+            Report deletereportid = db.Report.FirstOrDefault(p => p.Cr == id);
+            db.Report.Remove(deletereportid);
             await db.SaveChangesAsync();
             return RedirectToAction("Index");
         }
         public async Task<IActionResult> Send_email(decimal id)// Можно наверное сделать метод для отправки по почти с входным параметром для отправки почты на свой ящик или на почту указанную
         {
-            /*
-            var query = from Report in db.Report
-                        where Report.Cr == id
-                        select Report.ReportWay;
-                        */
+   
             var RepWay = db.Report.Where(c => c.Cr == id).Select(c => c.ReportWay);// переделал на контекст
 
             MailAddress from = new MailAddress("19capral95@gmail.com", "Faradey");
@@ -362,18 +316,9 @@ namespace Dis1.Controllers
 
         public async Task<IActionResult> Send_email_cr(string name)
         {
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-            /*
-            var query1 = from Report in db.Report
-                         where Report.Cc == Getid()
-                         select Report.ReportWay;
-                         */
-            var RepWay = db.Report.Where(c => c.Cc == Getid()).Select(c => c.ReportWay);// переделал на контекст
-            Reportwaycmp = RepWay.LastOrDefault();
+          
+            var RepWay = db.Report.Where(c => c.Cc == Getuserid()).Select(c => c.ReportWay);// переделал на контекст
+            reportwaycmp = RepWay.LastOrDefault();
             MailAddress from = new MailAddress("19capral95@gmail.com", "Faradey");
             // кому отправляем
             MailAddress to = new MailAddress(name);
@@ -384,7 +329,7 @@ namespace Dis1.Controllers
             // текст письма
             mail.Body = "<h2>Письмо-тест работы smtp-клиента</h2>";
             // письмо представляет код html
-            mail.Attachments.Add(new Attachment(Reportwaycmp));
+            mail.Attachments.Add(new Attachment(reportwaycmp));
             mail.IsBodyHtml = true;
             // адрес smtp-сервера и порт, с которого будем отправлять письмо
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
@@ -399,8 +344,8 @@ namespace Dis1.Controllers
 
         public async Task<IActionResult> Send_email_cr(string mailAddres, string headMessange, string bodyMessange)
         {
-            var RepWay = db.Report.Where(c => c.Cc == Getid()).Select(c => c.ReportWay);// переделал на контекст
-            Reportwaycmp = RepWay.LastOrDefault();
+            var RepWay = db.Report.Where(c => c.Cc == Getuserid()).Select(c => c.ReportWay);// переделал на контекст
+            reportwaycmp = RepWay.LastOrDefault();
             MailAddress from = new MailAddress("19capral95@gmail.com", "Faradey");
             // кому отправляем
             MailAddress to = new MailAddress(mailAddres);
@@ -409,7 +354,7 @@ namespace Dis1.Controllers
 
             FillinMail(mail, headMessange, bodyMessange);
 
-            mail.Attachments.Add(new Attachment(Reportwaycmp));
+            mail.Attachments.Add(new Attachment(reportwaycmp));
             mail.IsBodyHtml = true;
             // адрес smtp-сервера и порт, с которого будем отправлять пис+ьмо
             SmtpClient smtp = new SmtpClient("smtp.gmail.com", 587);
@@ -423,56 +368,27 @@ namespace Dis1.Controllers
 
         public async Task<IActionResult> Sendcmp(decimal id1)
         {
-            /*
-            var query1 = from Report in db.Report
-                        where Report.Cr== id1
-                        select Report.ReportWay;
-                        */
-            var RepWay = db.Report.Where(c => c.Cr == id1).Select(c => c.ReportWay);// переделал на контекст
-            Reportwaycmp = RepWay.FirstOrDefault();
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-            /*
-        var query = from Friends in db.Friends
-                    from Company in db.Company
-                    where Friends.FriendOne == Company.Cc && Friends.FriendTwo == Getid() && Friends.Stat == 1// сделал типо вызов метода что бы получать id
-                    select Company;
-                    */
-            var CompanyTL = from p in db.Friends join c in db.Company on p.FriendOne equals c.Cc where p.FriendTwo == Getid() && p.Stat == 1 select c;// хз работает или нет
+           
+            var repway = db.Report.Where(c => c.Cr == id1).Select(c => c.ReportWay);// переделал на контекст
+            reportwaycmp = repway.FirstOrDefault();
+            
+            var CompanyTL = from p in db.Friends join c in db.Company on p.FriendOne equals c.Cc where p.FriendTwo == Getuserid() && p.Stat == 1 select c;// хз работает или нет
             return View(CompanyTL.ToList());
         }
 
         [HttpPost]
         public async Task<IActionResult> Send_cmp(decimal id)
         {
-            /*
-            decimal id1 = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id1 = myphone.Cc;*/
-            /*
-        var query1 = from Report in db.Report
-                     where Report.Cc == Getid()// сделал типо вызов метода что бы получать id
-                     select Report.ReportWay; */
-            var RepWay = db.Report.Where(c => c.Cc == Getid()).Select(c => c.ReportWay);// переделал на контекст
-            Reportwaycmp = RepWay.LastOrDefault();
-            var RepName = db.Report.Where(c => c.Cc == Getid()).Select(c => c.ReportName);
-            /*
-            var reportname = from Report in db.Report
-                         where Report.Cc == Getid()// сделал типо вызов метода что бы получать id
-                             select Report.ReportName;
-                             */
-            string Reportname = RepName.LastOrDefault();
-            //   decimal id = 0;
-            //   Company myphone1 = db.Company.FirstOrDefault(p => p.CompanyLogin == name);
-            //    if (myphone1 != null)
-            //       id = myphone.Cc;
-            db.Report.Add(new Report { ReportCustomer = User.Identity.Name, ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = Reportwaycmp, Cc = id, ReportName = Reportname });
+          
+            var reportway = db.Report.Where(c => c.Cc == Getuserid()).Select(c => c.ReportWay);// переделал на контекст
+            reportwaycmp = reportway.LastOrDefault();
+            var reportname = db.Report.Where(c => c.Cc == Getuserid()).Select(c => c.ReportName);
+           
+            string Reportname = reportname.LastOrDefault();
+           
+            db.Report.Add(new Report { ReportCustomer = User.Identity.Name, ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = reportwaycmp, Cc = id, ReportName = Reportname });
             await db.SaveChangesAsync();
-            Reportwaycmp = "";
+            reportwaycmp = "";
             return RedirectToAction("Index");
 
 
@@ -480,17 +396,9 @@ namespace Dis1.Controllers
 
         public IActionResult WorkSh()
         {
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-                /*
-            var query = from Shablon in db.Shablon
-                        where Shablon.Cc == Getid()// сделал типо вызов метода что бы получать id
-                        select Shablon;*/
-            var ShablonTL = db.Shablon.Where(c => c.Cc == Getid()).Select(c => c);
-            return View(ShablonTL.ToList());
+            
+            var templateforwork = db.Shablon.Where(c => c.Cc == Getuserid()).Select(c => c);
+            return View(templateforwork.ToList());
         }
         [HttpPost] //не используй больше названия типа work1, work2 итп
         public async Task<IActionResult> Work(decimal build, decimal project, decimal customer, decimal genbuild)
@@ -517,19 +425,9 @@ namespace Dis1.Controllers
         public IActionResult Company()
         {
 
-            //тут тоже названия запроса норм сделай (А)
-            /* decimal id = 0; 
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-            id = myphone.Cc;*/
-            /*
-            var query = from Friends in db.Friends
-                        from Company in db.Company
-                        where Friends.FriendOne == Company.Cc && Friends.FriendTwo == Getid() && Friends.Stat == 1// сделал типо вызов метода что бы получать id
-                        select Company;
-                        */
-            var CompanyTL = from p in db.Friends join c in db.Company on p.FriendOne equals c.Cc where p.FriendTwo == Getid() && p.Stat == 1 select c;
-            return View(CompanyTL.ToList());
+          
+            var allcompany = from p in db.Friends join c in db.Company on p.FriendOne equals c.Cc where p.FriendTwo == Getuserid() && p.Stat == 1 select c;
+            return View(allcompany.ToList());
 
         }
         public IActionResult Company_All()
@@ -539,36 +437,20 @@ namespace Dis1.Controllers
         }
         public IActionResult Company_Req()
         {
-            /*
-            decimal id = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id = myphone.Cc;*/
-            //и тут
-            /*
-            var query = from Friends in db.Friends
-                        from Company in db.Company
-                        where Friends.FriendOne == Getid() && Friends.FriendTwo == Company.Cc && Friends.Stat == 0// сделал типо вызов метода что бы получать id
-                        select Company;
-                        */
-            var CompanyTL = from p in db.Friends join c in db.Company on p.FriendOne equals Getid() where p.FriendTwo == c.Cc && p.Stat == 0 select c;// хз работает или нет
-            return View(CompanyTL.ToList());
+            
+            var friendscompany = from p in db.Friends join c in db.Company on p.FriendOne equals Getuserid() where p.FriendTwo == c.Cc && p.Stat == 0 select c;// хз работает или нет
+            return View(friendscompany.ToList());
         }
         [HttpPost]
         public async Task<IActionResult> Company_Add(decimal id)
         {
             
-            /*
-            decimal id1 = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id1 = myphone.Cc;*/
-            
-            var friend1 = db.Friends.Where(c => c.FriendOne == Getid()).Where(c => c.FriendTwo == id).Where(c=>c.Stat==1).FirstOrDefault();
-            var friend2 = db.Friends.Where(c => c.FriendOne == Getid()).Where(c => c.FriendTwo == id).Where(c => c.Stat == 0).FirstOrDefault();
+           
+            var friend1 = db.Friends.Where(c => c.FriendOne == Getuserid()).Where(c => c.FriendTwo == id).Where(c=>c.Stat==1).FirstOrDefault();
+            var friend2 = db.Friends.Where(c => c.FriendOne == Getuserid()).Where(c => c.FriendTwo == id).Where(c => c.Stat == 0).FirstOrDefault();
             if (friend1 == null && friend2 == null)
             {
-                db.Friends.Add(new Friends { FriendOne = Getid(), FriendTwo = id, Stat = 0 });// сделал типо вызов метода что бы получать id
+                db.Friends.Add(new Friends { FriendOne = Getuserid(), FriendTwo = id, Stat = 0 });// сделал типо вызов метода что бы получать id
                 await db.SaveChangesAsync();
                 return RedirectToAction("Company_Req");
             }
@@ -583,15 +465,11 @@ namespace Dis1.Controllers
         [HttpPost]
         public async Task<IActionResult> Company_Add_Friend(decimal id)
         {
-            /*
-            decimal id1 = 0;
-            Company myphone = db.Company.FirstOrDefault(p => p.CompanyLogin == User.Identity.Name);
-            if (myphone != null)
-                id1 = myphone.Cc;*/
-            var friend = db.Friends.Where(c => c.FriendOne == Getid()).Where(c => c.FriendTwo == id).FirstOrDefault();
+         
+            var friend = db.Friends.Where(c => c.FriendOne == Getuserid()).Where(c => c.FriendTwo == id).FirstOrDefault();
             friend.Stat = 1;
-           // db.Friends.Update(new Friends { FriendOne = Getid(), FriendTwo = id, Stat = 1 });// сделал типо вызов метода что бы получать id
-            db.Friends.Update(new Friends { FriendOne = id, FriendTwo = Getid(), Stat = 1 });// сделал типо вызов метода что бы получать id
+
+            db.Friends.Update(new Friends { FriendOne = id, FriendTwo = Getuserid(), Stat = 1 });// сделал типо вызов метода что бы получать id
             await db.SaveChangesAsync();
             return RedirectToAction("Company_All");
         }

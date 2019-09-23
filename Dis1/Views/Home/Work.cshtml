@@ -52,7 +52,7 @@
             <form method="post" action="~/Home/Work1">
                 <div class="shablon-text">
                     <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                        <input type="text" name="names" id="names" value="" class="work-txt" required />
                     </div>
                     <div>
                         <p class="value">Наименование отчета</p>
@@ -60,7 +60,7 @@
                 </div>
                 <div class="shablon-text">
                     <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                        <input type="text" name="names" id="names" value="" class="work-txt" required />
                     </div>
                     <div>
                         <p class="value">Наименование объекта строительства</p>
@@ -68,7 +68,7 @@
                 </div>
                 <div class="shablon-text">
                     <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                        <input type="text" name="names" id="names" value="" class="work-txt" required />
                     </div>
                     <div>
                         <p class="value">Номер проекта</p>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="shablon-text">
                     <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
+                        <input type="text" name="names" id="names" value="" class="work-txt" required />
                     </div>
                     <div>
                         <p class="value">Дата технического отчета</p>
@@ -178,7 +178,7 @@
                         <p class="value">Должность представителя проектной компании</p>
                     </div>
                 </div>
-    
+
                 <div class="shablon-text">
                     <div>
                         <input type="text" name="names" id="names" value="" class="work-txt" />
@@ -195,7 +195,7 @@
                         <p class="value">Представитель компании по строительному контролю</p>
                     </div>
                 </div>
-            
+
                 <div class="shablon-text">
                     <div>
                         <input type="text" name="names" id="names" value="" class="work-txt" />
@@ -242,54 +242,6 @@
                     </div>
                     <div>
                         <p class="value">Генеральный подрядчик</p>
-                    </div>
-                </div>
-                <div class="shablon-text">
-                    <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
-                    </div>
-                    <div>
-                        <p class="value">Номер серытых работ</p>
-                    </div>
-                </div>
-                <div class="shablon-text">
-                    <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
-                    </div>
-                    <div>
-                        <p class="value">Дата скрытых работ</p>
-                    </div>
-                </div>
-                <div class="shablon-text">
-                    <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
-                    </div>
-                    <div>
-                        <p class="value">Скрытые работы</p>
-                    </div>
-                </div>
-                <div class="shablon-text">
-                    <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
-                    </div>
-                    <div>
-                        <p class="value">Материал для скрытых работ</p>
-                    </div>
-                </div>
-                <div class="shablon-text">
-                    <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
-                    </div>
-                    <div>
-                        <p class="value">Дата начала скрытых работ</p>
-                    </div>
-                </div>
-                <div class="shablon-text">
-                    <div>
-                        <input type="text" name="names" id="names" value="" class="work-txt" />
-                    </div>
-                    <div>
-                        <p class="value">Дата окончания скрытых работ</p>
                     </div>
                 </div>
                 <div class="shablon-text">
@@ -370,6 +322,42 @@
                     </div>
                     <div>
                         <p class="value">Количество опор другого типа</p>
+                    </div>
+                </div>
+                <hr />
+                <button id="button" type="button" onlick="duplicate()">Click me</button>
+                <div id="hidework">
+                    <div class="shablon-text">
+                        <div>
+                            <input type="text" name="names" id="names" value="" class="work-txt" />
+                        </div>
+                        <div>
+                            <p class="value">Скрытые работы</p>
+                        </div>
+                    </div>
+                    <div class="shablon-text">
+                        <div>
+                            <input type="text" name="names" id="names" value="" class="work-txt" />
+                        </div>
+                        <div>
+                            <p class="value">Материал для скрытых работ</p>
+                        </div>
+                    </div>
+                    <div class="shablon-text">
+                        <div>
+                            <input type="text" name="names" id="names" value="" class="work-txt" />
+                        </div>
+                        <div>
+                            <p class="value">Дата начала скрытых работ</p>
+                        </div>
+                    </div>
+                    <div class="shablon-text">
+                        <div>
+                            <input type="text" name="names" id="names" value="" class="work-txt" />
+                        </div>
+                        <div>
+                            <p class="value">Дата окончания скрытых работ</p>
+                        </div>
                     </div>
                 </div>
                 <div class="shablon-btn">
@@ -474,6 +462,9 @@
                 </div>
                 <div class="shablon-btn">
                     <input type="submit" value="Отправить" class="btn-shablon" id="link3" />
+                </div>
+                <div class="shablon-btn">
+                    <input type="submit" value="Создать" id="link3" />
                 </div>
             </form>
         </div>
