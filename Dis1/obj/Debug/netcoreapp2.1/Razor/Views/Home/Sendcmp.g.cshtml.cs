@@ -70,7 +70,7 @@ using Dis1.Models;
             WriteLiteral("<div class=\"work\">\r\n    ");
             EndContext();
             BeginContext(110, 919, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6aee7a3783e842cb8653b5447f8a438b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1fb268e699f9460981f170698f104985", async() => {
                 BeginContext(141, 309, true);
                 WriteLiteral(@"
         <div class=""cmp-dialogue"">
@@ -92,7 +92,7 @@ using Dis1.Models;
                 WriteLiteral("                            ");
                 EndContext();
                 BeginContext(559, 72, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c09674d04f9c4edb93faea6bfc30da22", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "99f36ec93b8a4addb43d1aed827df6f8", async() => {
                     BeginContext(605, 17, false);
 #line 16 "C:\Users\aynur\Desktop\work\815а\newdoc\Test\Dis1\Views\Home\Sendcmp.cshtml"
                                                                     Write(item.CompanyLogin);
@@ -135,7 +135,7 @@ using Dis1.Models;
                 WriteLiteral("                    </select>\r\n                </div>\r\n                <div>\r\n                    <p class=\"value\">Выберете компанию</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"shablon-btn\">\r\n                ");
                 EndContext();
                 BeginContext(897, 83, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ea5bdf3f2aaa4070b125fdb1fe4ad9c8", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "dd8ea0d891714800b94b1d5f9df06eac", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();

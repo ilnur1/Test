@@ -112,7 +112,7 @@ using Dis1.Models;
             WriteLiteral("\r\n                </p>\r\n            </div>\r\n            <div class=\"cmp-dialogue-btn\">\r\n                ");
             EndContext();
             BeginContext(763, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d262cffdf9bb4e4aa5711c6128f4b2a9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("button", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35751395ebc04df19f6269efb95aedf4", async() => {
                 BeginContext(838, 5, true);
                 WriteLiteral("Назад");
                 EndContext();

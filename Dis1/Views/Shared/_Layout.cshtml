@@ -7,6 +7,7 @@
     <environment include="Development">
     </environment>
     <link rel="stylesheet" href="@Url.Content("~/css/style.css")" />
+    <script src="~/js/JavaScript.js"></script>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
 </head>
 <body>
@@ -101,6 +102,16 @@
                 e.stopPropagation();
             });
         });
+    </script>
+    <script>
+        document.getElementById('button').onclick = duplicate;
+        var i = 0;
+        var original = document.getElementById('hidework');
+        function duplicate() {
+            var clone = original.cloneNode(true); 
+            clone.id = "hidework" + ++i; 
+            original.parentNode.appendChild(clone);
+        }
     </script>
 </body>
 </html>

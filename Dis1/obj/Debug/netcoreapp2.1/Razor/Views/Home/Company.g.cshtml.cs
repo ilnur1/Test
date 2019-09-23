@@ -75,12 +75,12 @@ using Dis1.Models;
 #line default
 #line hidden
             BeginContext(95, 69, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0af8274197ac46e98ae193a326e82911", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ecce33d919f74db1a8bdced8cc3c5ac8", async() => {
                 BeginContext(101, 6, true);
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(107, 48, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c88872b0ced54d3692f9f53302e06870", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("link", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ff5c7c4719da45aca29bd6eff553552e", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -125,7 +125,7 @@ using Dis1.Models;
         <div class=""shablon-head-inline"">");
             EndContext();
             BeginContext(515, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "35bd5d585a8143a4b8e0939f15dec614", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e65917ebc5464b96a1d254baa1ea6cdf", async() => {
                 BeginContext(594, 12, true);
                 WriteLiteral("Мои компании");
                 EndContext();
@@ -152,7 +152,7 @@ using Dis1.Models;
             WriteLiteral("</div>\r\n        <div class=\"shablon-head-inline\" style=\"margin-left:5px;\">");
             EndContext();
             BeginContext(684, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "defa4ebd9cf1400dbae13c57a0d5b372", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ea53be32aead404bb6f2b6bdcd93edba", async() => {
                 BeginContext(767, 12, true);
                 WriteLiteral("Все компании");
                 EndContext();
@@ -179,7 +179,7 @@ using Dis1.Models;
             WriteLiteral("</div>\r\n        <div class=\"shablon-head-inline\" style=\"margin-left:5px;\">");
             EndContext();
             BeginContext(857, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ad3d315f32145cd895c189633be9bf9", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c62b62fb21614137ac5a5c25a3477893", async() => {
                 BeginContext(940, 6, true);
                 WriteLiteral("Заявки");
                 EndContext();
@@ -270,7 +270,7 @@ using Dis1.Models;
             WriteLiteral("</p></li>\r\n                                ");
             EndContext();
             BeginContext(1648, 344, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "27d780c0a2244f9aaa9415ed8b168d9b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "34162cfd04d2423c8bd2ef0432addcd8", async() => {
                 BeginContext(1694, 74, true);
                 WriteLiteral("\r\n                                    <li><input type=\"hidden\" class=\"txt\"");
                 EndContext();
@@ -285,7 +285,7 @@ WriteAttributeValue("", 1775, item.Cc, 1775, 8, false);
                 WriteLiteral(" name=\"id\" /></li>\r\n                                    <li>");
                 EndContext();
                 BeginContext(1843, 103, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "35ac21fb61364a36af56ff9a203fa81a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "6700e6eb271745ea94f9d6deff5836c1", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_FormActionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.FormActionTagHelper>();
