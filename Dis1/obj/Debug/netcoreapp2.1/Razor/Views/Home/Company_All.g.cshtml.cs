@@ -75,7 +75,7 @@ using Dis1.Models;
         <div class=""shablon-head-inline"">");
             EndContext();
             BeginContext(374, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3f0d9005dde4447dbeb459cbcadf9c92", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dd90c58d9e8c43599dadfabb43801e53", async() => {
                 BeginContext(453, 12, true);
                 WriteLiteral("Мои компании");
                 EndContext();
@@ -102,7 +102,7 @@ using Dis1.Models;
             WriteLiteral("</div>\r\n        <div class=\"shablon-head-inline\" style=\"margin-left:5px;\">");
             EndContext();
             BeginContext(543, 99, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a30b9140d4ae40cf9de5ef1f8f44377d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "207c422d0fa24a7eaf4f4fdd6ce59617", async() => {
                 BeginContext(626, 12, true);
                 WriteLiteral("Все компании");
                 EndContext();
@@ -129,7 +129,7 @@ using Dis1.Models;
             WriteLiteral("</div>\r\n        <div class=\"shablon-head-inline\" style=\"margin-left:5px;\">");
             EndContext();
             BeginContext(716, 93, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bd0d2c64894f451590847270c4981565", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "3455147b3af1444588297efb9f5356d7", async() => {
                 BeginContext(799, 6, true);
                 WriteLiteral("Заявки");
                 EndContext();
@@ -185,7 +185,7 @@ using Dis1.Models;
             WriteLiteral("</td><td>");
             EndContext();
             BeginContext(1164, 228, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6a5c47d376b643c5ab059d1f0c392f46", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "87a93912103c4d9ab29400cec20d0670", async() => {
                 BeginContext(1254, 28, true);
                 WriteLiteral("<input type=\"type\" name=\"id\"");
                 EndContext();
