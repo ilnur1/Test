@@ -60,7 +60,7 @@ using Dis1.Models;
             WriteLiteral("\r\n<div class=\"work\">\r\n    <div class=\"banner-image\">\r\n        <a href=\"\">");
             EndContext();
             BeginContext(127, 29, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "01cac504a20e4a27b5d9e5bfd66745eb", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "ee67c37fe11741a281cd64b3b5ed87d8", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
