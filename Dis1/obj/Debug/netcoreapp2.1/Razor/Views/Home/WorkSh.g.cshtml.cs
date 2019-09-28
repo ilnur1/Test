@@ -81,7 +81,7 @@ using Dis1.Models;
             ");
             EndContext();
             BeginContext(562, 2321, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df103fd5dc4340a0942b01c071bf8932", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020f2b178e9bf9ecfe1890b87b989a991891041b7949", async() => {
                 BeginContext(622, 163, true);
                 WriteLiteral("\r\n                <div class=\"shablon-choose\">\r\n                    <div class=\"shablon-text\">\r\n                        <select class=\"shablon-txt\" name=\"build\">\r\n");
                 EndContext();
@@ -95,7 +95,7 @@ using Dis1.Models;
                 WriteLiteral("                                ");
                 EndContext();
                 BeginContext(906, 73, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "02228106ee0c44dd9674dacd1cb34df9", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020f2b178e9bf9ecfe1890b87b989a991891041b8858", async() => {
                     BeginContext(954, 16, false);
 #line 22 "C:\Users\aynur\Desktop\work\815а\newdoc\Test\Dis1\Views\Home\WorkSh.cshtml"
                                                                           Write(item.ShablonName);
@@ -138,7 +138,7 @@ using Dis1.Models;
                 WriteLiteral("                        </select>\r\n                        <br>\r\n                        <select class=\"shablon-txt\">\r\n                            ");
                 EndContext();
                 BeginContext(1159, 49, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e99189789b994999ac6c0b16d5996603", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020f2b178e9bf9ecfe1890b87b989a991891041b11512", async() => {
                     BeginContext(1181, 18, true);
                     WriteLiteral("Монтажная компания");
                     EndContext();
@@ -169,7 +169,7 @@ using Dis1.Models;
                 WriteLiteral("                     ");
                 EndContext();
                 BeginContext(1481, 77, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a9f8ee568b0447d9aab6dca5d035ec62", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020f2b178e9bf9ecfe1890b87b989a991891041b13510", async() => {
                     BeginContext(1533, 16, false);
 #line 35 "C:\Users\aynur\Desktop\work\815а\newdoc\Test\Dis1\Views\Home\WorkSh.cshtml"
                                                                    Write(item.ShablonName);
@@ -229,7 +229,7 @@ using Dis1.Models;
                 WriteLiteral("                     ");
                 EndContext();
                 BeginContext(1939, 79, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0ea51f54d4db4a23a74c368faafb725a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020f2b178e9bf9ecfe1890b87b989a991891041b16584", async() => {
                     BeginContext(1993, 16, false);
 #line 47 "C:\Users\aynur\Desktop\work\815а\newdoc\Test\Dis1\Views\Home\WorkSh.cshtml"
                                                                      Write(item.ShablonName);
@@ -289,7 +289,7 @@ using Dis1.Models;
                 WriteLiteral("                     ");
                 EndContext();
                 BeginContext(2398, 79, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1077bdc59ba24ff98a73218c243ef970", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "020f2b178e9bf9ecfe1890b87b989a991891041b19659", async() => {
                     BeginContext(2452, 16, false);
 #line 59 "C:\Users\aynur\Desktop\work\815а\newdoc\Test\Dis1\Views\Home\WorkSh.cshtml"
                                                                      Write(item.ShablonName);

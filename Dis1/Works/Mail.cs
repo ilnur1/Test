@@ -5,11 +5,11 @@ namespace Dis1.Works
 {
     public class Mail
     {
-        public void sendmail(string reportwaycmp, string ownmailadress)
+        public void sendmail(string reportwaycmp, string mailadress)
         {
             MailAddress from = new MailAddress("19capral95@gmail.com", "Faradey");
             // кому отправляем
-            MailAddress to = new MailAddress(ownmailadress);
+            MailAddress to = new MailAddress(mailadress);
             // создаем объект сообщения
             MailMessage mail = new MailMessage(from, to);
             // тема письма
