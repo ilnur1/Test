@@ -66,23 +66,42 @@ namespace Dis1.Controllers
         [CustomExceptionFilter]
         public async Task<IActionResult> Work1(List<string> names)
         {
-            // Извлечь отправленные данные из Request.Form (А) не понял
-            createreport.createreportsVL(names);
-            db.Report.Add(new Report { ReportCustomer = names[3], ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx", Cc = Getuserid(), ReportName = names[0] });
-            await db.SaveChangesAsync();
-            string Reportwaycmp = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx";
-            return RedirectToAction("SendRep");
+            var reportname = db.Report.Where(c => c.Cc == Getuserid()).Where(x => x.ReportName == names[0]).Select(x => x.ReportName).FirstOrDefault();
+            if (reportname != "")
+            {
+                // Извлечь отправленные данные из Request.Form (А) не понял
+                createreport.createreportsVL(names);
+                db.Report.Add(new Report { ReportCustomer = names[3], ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx", Cc = Getuserid(), ReportName = names[0] });
+                await db.SaveChangesAsync();
+                string Reportwaycmp = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx";
+                return RedirectToAction("SendRep");
+            }
+            else
+            {
+                ViewData["Title"] = "Отчет с таким названием уже существует";
+                return View("Error");
+            }
+            
         }
         [HttpPost]
         [Authorize]
-        [CustomExceptionFilter]
         public async Task<IActionResult> Work2(List<string> names)
         {
-            createreport.createreportsTest(names);
-            db.Report.Add(new Report { ReportCustomer = names[3], ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx", Cc = Getuserid(), ReportName = names[0] });// сделал типо вызов метода что бы получать id
-            await db.SaveChangesAsync();
-            string Reportwaycmp = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx";
-            return RedirectToAction("SendRep");
+            var reportname = db.Report.Where(c => c.Cc == Getuserid()).Where(x => x.ReportName == names[0]).Select(x => x.ReportName).FirstOrDefault();
+            if (reportname ==null)
+            {
+                createreport.createreportsTest(names);
+                db.Report.Add(new Report { ReportCustomer = names[3], ReportDate = DateTime.Now, ReportStatus = "0", ReportWay = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx", Cc = Getuserid(), ReportName = names[0] });// сделал типо вызов метода что бы получать id
+                await db.SaveChangesAsync();
+                string Reportwaycmp = "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx";
+                return RedirectToAction("SendRep");
+            }
+            else
+            {
+                ViewData["Title"]="Отчет с таким названием уже существует";
+                return View("Error");
+            }
+            
         }
         [CustomExceptionFilter]
         public async Task<IActionResult> Template()
@@ -173,33 +192,35 @@ namespace Dis1.Controllers
             return RedirectToAction("Index");
         }
 
+        /// <summary>
+        /// Отправка письма
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="mailAddres">адрес получателя</param>
         [Authorize]
-        [CustomExceptionFilter]/// <summary>
-                               /// Отправка письма
-                               /// </summary>
-                               /// <param name="id"></param>
-                               /// <param name="mailAddres">адрес получателя</param>
-                               /// <returns></returns>
+        [CustomExceptionFilter]                      /// <returns></returns>
         public async Task<IActionResult> Send_email(decimal id)
         {
             var reportwaycmp = db.Report.Where(c => c.Cr == id).Select(c => c.ReportWay).FirstOrDefault();// переделал на контекст
-            var ownmailadress = db.Company.Where(c => c.Cc == Getuserid()).Select(c => c.CompanyName).FirstOrDefault();//пока название компании, когда появится строка почтового вдреса изменить
-            sendmail.sendmail( reportwaycmp,  ownmailadress);
-            return RedirectToAction("Index");
+            var ownmailadress = db.Company.Where(c => c.Cc == Getuserid()).Select(c => c.Mail).FirstOrDefault();
+            if (ownmailadress != null)
+            {
+                sendmail.sendmail(reportwaycmp, ownmailadress);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                ViewData["Title"] = "Вы не записали адресс вашей элкутронной почты, пожалуйста заполните данную строку в личном кабинете и попробуйте снова";
+                return View("Error");
+            }
         }
-
-        private void FillinMail(MailMessage mail, string headMessange, string bodyMessange)
-        {
-            mail.Subject = headMessange;
-            // текст письма
-            mail.Body = $"<h2>{bodyMessange}</h2>";
-        }
+        
         [Authorize]
         [CustomExceptionFilter]
-        public async Task<IActionResult> Send_email_cr(string name)
+        public async Task<IActionResult> Send_email_cr(string mailadress)
         {
             var reportwaycmp = db.Report.Where(c => c.Cc == Getuserid()).Select(c => c.ReportWay).LastOrDefault();// переделал на контекст
-            sendmail.sendmail(reportwaycmp, name);
+            sendmail.sendmail(reportwaycmp, mailadress);
             return RedirectToAction("Index");
 
         }

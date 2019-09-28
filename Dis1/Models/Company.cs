@@ -24,6 +24,7 @@ namespace Dis1.Models
         public string CompanyAdress { get; set; }
         public string CompanyPhone { get; set; }
         public string CompanyDescription { get; set; }
+        public string Mail { get; set; }
 
         public ICollection<Friends> FriendsFriendOneNavigation { get; set; }
         public ICollection<Friends> FriendsFriendTwoNavigation { get; set; }

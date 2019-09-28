@@ -75,7 +75,7 @@ using Dis1.Models;
         <div class=""shablon-head-inline"">");
             EndContext();
             BeginContext(388, 95, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7e4c591ab48f428baf8906fc09fec2c1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c26727", async() => {
                 BeginContext(468, 11, true);
                 WriteLiteral("Просмотреть");
                 EndContext();
@@ -102,7 +102,7 @@ using Dis1.Models;
             WriteLiteral("</div>\r\n        <div class=\"shablon-head-inline\" style=\"margin-left:5px;\">");
             EndContext();
             BeginContext(557, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5b46d096f4344e6f8a9bcf0b24f9a406", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c28668", async() => {
                 BeginContext(634, 8, true);
                 WriteLiteral("Добавить");
                 EndContext();
@@ -129,12 +129,12 @@ using Dis1.Models;
             WriteLiteral("</div>\r\n    </div>\r\n    <div class=\"data\" id=\"content2\">\r\n        ");
             EndContext();
             BeginContext(712, 1649, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "68ec2ff744a44519b3911fafc31d749d", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c210603", async() => {
                 BeginContext(767, 98, true);
                 WriteLiteral("\r\n            <div class=\"shablon-text\">\r\n                <div class=\"text\">\r\n                    ");
                 EndContext();
                 BeginContext(865, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "aedf3b57fc5e4f78ad9ce8e65e06c3c3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c211090", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -160,7 +160,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                </div>\r\n                <div>\r\n                    <p class=\"value\">Название шаблона</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"shablon-text\">\r\n                <div class=\"text\">\r\n                    ");
                 EndContext();
                 BeginContext(1168, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "153d4d25a092438eb7c60163fb99a449", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c213263", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -186,7 +186,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                </div>\r\n                <div>\r\n                    <p class=\"value\">Компания представителя</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"shablon-text\">\r\n                <div class=\"text\">\r\n                    ");
                 EndContext();
                 BeginContext(1477, 59, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "3abd49fb1eaa44109b96a66a81127cb4", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c215443", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -212,7 +212,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                </div>\r\n                <div>\r\n                    <p class=\"value\">Должность</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"shablon-text\">\r\n                <div class=\"text\">\r\n                    ");
                 EndContext();
                 BeginContext(1777, 56, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "d7a756bca5d042059b055de17df76f88", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c217614", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();
@@ -238,7 +238,7 @@ __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper.For = ModelExpressionProvid
                 WriteLiteral("\r\n                </div>\r\n                <div>\r\n                    <p class=\"value\">Приказ</p>\r\n                </div>\r\n            </div>\r\n            <div class=\"shablon-text\">\r\n                <div class=\"text\">\r\n                    ");
                 EndContext();
                 BeginContext(2071, 56, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "b87f8c64c1e84d66af84cc26e1491912", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "ab5b17c8452d8dd2e5c63bb20dd891bd934773c219779", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

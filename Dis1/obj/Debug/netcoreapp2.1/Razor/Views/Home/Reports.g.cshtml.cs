@@ -107,7 +107,7 @@ using Dis1.Models;
             WriteLiteral("</td><td style=\"display: inline-flex;\">");
             EndContext();
             BeginContext(693, 224, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "23e942532a054384b9c455a8ea66bed0", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5aae368cbfe2244970aedbf7209f0efda2fa10a6876", async() => {
                 BeginContext(778, 28, true);
                 WriteLiteral("<input type=\"type\" name=\"id\"");
                 EndContext();
@@ -141,7 +141,7 @@ WriteAttributeValue("", 814, item.Cr, 814, 8, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
             BeginContext(917, 229, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "62221e4aef3842449e46fab939bd3673", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5aae368cbfe2244970aedbf7209f0efda2fa10a9235", async() => {
                 BeginContext(1005, 28, true);
                 WriteLiteral("<input type=\"type\" name=\"id\"");
                 EndContext();
@@ -175,7 +175,7 @@ WriteAttributeValue("", 1041, item.Cr, 1041, 8, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
             BeginContext(1146, 226, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "294a7d131c6d437cba23cc95a9a60b09", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5aae368cbfe2244970aedbf7209f0efda2fa10a11603", async() => {
                 BeginContext(1231, 29, true);
                 WriteLiteral("<input type=\"type\" name=\"id1\"");
                 EndContext();
@@ -209,7 +209,7 @@ WriteAttributeValue("", 1268, item.Cr, 1268, 8, false);
             __tagHelperExecutionContext = __tagHelperScopeManager.End();
             EndContext();
             BeginContext(1372, 233, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a844695220414fc78f2295884659a391", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a5aae368cbfe2244970aedbf7209f0efda2fa10a13972", async() => {
                 BeginContext(1464, 29, true);
                 WriteLiteral("<input type=\"type\" name=\"id1\"");
                 EndContext();

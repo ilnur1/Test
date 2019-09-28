@@ -20,6 +20,7 @@ namespace Dis1.Works
         
         public void createreportsVL(List<string> names)
         {
+            
             System.IO.File.Delete("C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx");
             //   System.IO.File.Delete("C:\\Users\\aynur\\Downloads\\Reportdoc2.docx");
             System.IO.File.Copy("C:\\Users\\aynur\\Downloads\\Reportdoc.docx", "C:\\Users\\aynur\\source\\repos\\Faradey\\Dis1\\wwwroot\\reports\\" + names[0] + ".docx");

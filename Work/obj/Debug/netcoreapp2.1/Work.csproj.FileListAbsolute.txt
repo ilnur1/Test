@@ -1,0 +1,9 @@
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\bin\Debug\netcoreapp2.1\Work.deps.json
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\bin\Debug\netcoreapp2.1\Work.dll
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\bin\Debug\netcoreapp2.1\Work.pdb
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\obj\Debug\netcoreapp2.1\Work.csprojAssemblyReference.cache
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\obj\Debug\netcoreapp2.1\Work.csproj.CoreCompileInputs.cache
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\obj\Debug\netcoreapp2.1\Work.AssemblyInfoInputs.cache
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\obj\Debug\netcoreapp2.1\Work.AssemblyInfo.cs
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\obj\Debug\netcoreapp2.1\Work.dll
+C:\Users\aynur\Desktop\work\815а\newdoc\Test\Work\obj\Debug\netcoreapp2.1\Work.pdb
